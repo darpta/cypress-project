@@ -24,15 +24,18 @@ describe('ToDo App', () => {
       const firstItem = 'first Item'
       const secondItem = 'second Item'
       const thirdItem = 'third Item'
+      const fourthItem = 'fourth Item'
 
       addNewItem(firstItem)
       //addNewItem === cy.get('input.new-todo').type(firstItem).type('{enter}')
       addNewItem(secondItem)
       addNewItem(thirdItem)
+      addNewItem(fourthItem)
 
       cy.get('.todo-list li').eq(0).should('contain.text', firstItem)
       cy.get('.todo-list li').eq(1).should('contain.text', secondItem)
       cy.get('.todo-list li').eq(2).should('contain.text', thirdItem)
+      cy.get('.todo-list li').eq(3).should('contain.text', fourthItem)
     })
   })
 })
